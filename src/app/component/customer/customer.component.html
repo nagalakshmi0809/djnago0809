@@ -1,0 +1,19 @@
+
+<mat-card>
+    <mat-card-header>
+        <h2>Customer</h2>
+       
+    </mat-card-header>
+    <mat-card-content>
+        <table mat-table [dataSource]="datasource">
+            <ng-container matColumnDef="{{innercolumn}}" *ngFor="let innercolumn of displayColumns">
+                <th mat-header-cell *matHeaderCellDef> {{innercolumn}}</th>
+                <th mat-cell *matCellDef="let element"> {{element[innercolumn]}}</th>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayColumns" style="background-color :blue;color:white"></tr>
+            <tr mat-row *matRowDef="let row;columns:displayColumns"></tr>
+
+        </table>
+
+    </mat-card-content>
+</mat-card>
